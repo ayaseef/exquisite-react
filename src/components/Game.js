@@ -24,7 +24,7 @@ const Game = () => {
     return( (submittedLines.length > 0) ? submittedLines[submittedLines.length - 1] : '');
   }
   const finishGame = () => {
-    setSubmitted(true);
+    setSubmitted(!submitted);
   }
   return (
     <div className="Game">
