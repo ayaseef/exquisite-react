@@ -14,13 +14,15 @@ const PlayerSubmissionForm = (props) => {
         <div className="PlayerSubmissionForm__poem-inputs">
 
           {
-            // Put your form inputs here... We've put in one below as an example
+            props.fields.map((element) => {
+              if (element.placeholder) {
+                return(<input placeholder={element.placeholder} type="text"/>)
+              } else {
+                return(element)
+              }
+            })
           }
-          <input
-            placeholder="hm..."
-            type="text" />
-          <input placeholder="another placeholder" type="text"/>
-          
+
         </div>
 
         <div className="PlayerSubmissionForm__submit">
