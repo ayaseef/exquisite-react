@@ -17,6 +17,10 @@
   justify-content: center;
 }
 
+input.empty {
+  background: gray;
+}
+
 .PlayerSubmissionForm__submit-btn {
   flex: 0.5;
   margin: 2rem;

@@ -7,19 +7,27 @@ const FinalPoem = (props) => {
     event.preventDefault();
     props.revealPoem();
   }
-  return (
-    <div className="FinalPoem">
-      <section className="FinalPoem__poem">
-        <h3>Final Poem</h3>
-        {props.submissions.map((element) => {
-          return(<p>{element}</p>)
-        })}
-      </section>
+  const finishedPoem = 
+  <section className="FinalPoem__poem">
+    <h3>Final Poem</h3>
+    {props.submissions.map((element) => {
+      return(<p>{element}</p>)
+    })}
+  </section>
 
-      <div className="FinalPoem__reveal-btn-container">
-      <input type="button" value="We are finished: Reveal the Poem" className="FinalPoem__reveal-btn" onClick={onClickCallback} />
+
+const poemButton = 
+  <div className="FinalPoem__reveal-btn-container">
+    <input type="button" value="We are finished: Reveal the Poem" className="FinalPoem__reveal-btn" onClick={onClickCallback} />
+  </div>
+
+
+const display = props.isSubmitted ? finishedPoem : poemButton
+
+return (
+    <div className="FinalPoem">
+      {display}
       </div>
-    </div>
   );
 }
 

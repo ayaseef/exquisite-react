@@ -53,7 +53,7 @@ const PlayerSubmissionForm = (props) => {
           {
             props.fields.map((element, i) => {
               if (element.key) {
-                return(<input key={ `${i}` } name={ element.key } placeholder={ element.placeholder } type="text" value={ playerSubmission[element.key] } onChange={ onInputChange } />)
+                return(<input key={ `${i}` } className={ playerSubmission[element.key] === '' ? 'empty' : 'full' } name={ element.key } placeholder={ element.placeholder } type="text" value={ playerSubmission[element.key] } onChange={ onInputChange } />)
               } else {
                 return(element)
               }
